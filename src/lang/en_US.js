@@ -1,0 +1,212 @@
+const message = {
+  icon:{
+    menu1:"/upload/2022/06/30/menu1_20220630163237A004.png",
+    menu2:"/upload/2022/06/30/menu2_20220630163240A005.png",
+    menu3:"/upload/2022/06/30/menu3_20220630163243A006.png",
+    menu4:"/upload/2022/06/30/menu4_20220630163247A007.png",
+    menu5:"/upload/2022/06/30/menu5_20220630163250A008.png",
+
+    t1:"/upload/2022/06/30/t1_20220630163444A009.png",
+    t2:"/upload/2022/06/30/t2_20220630163448A010.png",
+    t3:"/upload/2022/06/30/t3_20220630163453A011.png",
+    t4:"/upload/2022/07/19/t4s_20220719180945A021.png",
+    t5:"/upload/2022/07/14/help2_20220714144817A054.png",
+    t6:"/upload/2022/08/12/t6e_20220812173642A003.png",
+
+    r_1:"/upload/2022/06/30/r_1_20220630163630A013.png",
+    r_2:"/upload/2022/06/30/r_2_20220630163633A014.png",
+    r_3:"/upload/2022/06/30/r_3_20220630163636A015.png",
+    r_4:"/upload/2022/08/10/r-4e_20220810144741A008.png",
+
+    eggs:"/upload/2022/08/05/eggse_20220805163236A003.png"
+  },
+  btn:{
+    qb:"All",
+    kzp:"Not Worn",
+    yzp:"Wear",
+
+    yhq:"User",
+    csq:"Sale",
+    gmjl:"Order",
+    kp:"Cards",
+    mh:"Casket",
+    dj:"Prop",
+    jn:"Skill",
+    wq:"Arms",
+    fsb:"List of gods",
+    phb:"Ranking List",
+    mx:"Detailed",
+    kpsd:"Card flash",
+
+    zp:"Wear",
+    cx:"Remove",
+    ddz:"Await",
+    ydz:"Forged",
+    gsz:"Sell",
+    dzz:"Forging",
+
+    cs:"Sell",
+    dz:"Forging",
+    tx:"Withdrawal",
+
+    zscc:"oneself",
+    sqkdj:"Community Point",
+    sqj:"Community Award",
+    txdj:"Withdrawal Confirmation",
+
+
+    qchc:"Clear Cache",
+    zlxz:"Power correction",
+    gm:"Buy",
+    kq:"Open",
+    dh:"Swap",
+    qrxg:"Confirm modification",
+    qrdh:"Confirm exchange",
+    qrcs:"Confirm Sale",
+    fz: 'copy',
+    bd: 'bind',
+    qrsj:"Confirm sale",
+    sh:"Redeem",
+
+    ptkp:"Cards(platform)",
+    yjkp:"Cards(User)",
+    ptdj:"Prop(platform)",
+    ptjn:"Skill(platform)",
+    yhdj:'Prop(User)',
+    csjl:"Sales records",
+
+    qwfr:"Network",
+    bdjl:"Duel",
+    txcg:"success",
+    txsb:"Fail",
+    wpdh:"Exchange",
+
+    xx:"Detailed",
+    sd:"Cashed",
+
+    top_xx:"Card details"
+
+  },
+  label:{ // 标签 ，字少的
+    yq:"invitation",
+    wdyqm:"My invitation code",
+    bdyqm:"Bind invitation code",
+    qsryqm:"Please enter the invitation code",
+
+    wl:"Outer chain",
+    tz:"Notice",
+    gg:"Notice",
+    grxx:"personal",
+    qsrnc:"Please enter a nickname",
+
+    mryjjl:"Daily estimated reward",
+    zl:"power",
+    zb:'equip',
+    nj:"durable",
+    jz:"value",
+    kpzp:"Card assembly",
+
+    jlxcjl:"Next reward",
+    xhzl:"consume",
+
+    wdmh:"My blind box",
+    mhsl:"blind Boxes",
+    zlzx:"Total combat power",
+    dqxz:"Currently selected",
+
+    sy:"Profit",
+    tx:"Withdrawal",
+    qsrytxdsl:"Please enter the quantity to be extracted",
+    ye:"Balance",
+    sxf:"Service Charge",
+    wddz:"My address",
+
+    qsrycsdjg: "Please enter the price to sell",
+
+    jczl:"Basic Power",
+    zzl:"Total Power",
+
+    jc:"Data",
+    jc1:'Output yesterday',
+    jc2:'Withdraw money yesterday',
+    jc3:'Unpacking yesterday',
+    jc4:'Consumed yesterday',
+    jc5:"Buy immortal card yesterday;<br/>&emsp;&emsp;Consumed mky quantity",
+  },
+  help:{
+    tit: "help center",
+    t1:"MKY",
+    p1: "MKY is the game token for meeting the journey to the west, and it is an indispensable token for players to obtain cards and props in the game",
+    v1: "use the video of purchasing mky",
+    t2: "card",
+    p2: "you need to enter the mall to get a card when you meet the westward journey, and you can only issue a card after purchasing a blind box; after issuing a card, click the card slot on the main page and click the card equipment",
+    v2: "use the video of purchasing blind boxes and equipment cards",
+    t3: "five node cards",
+    p3: "tang monk \n monkey king \n pig bajie \n monk sha / white dragon horse \n",
+    v3: "use each node to explain the video",
+    t4: "combat power",
+    p4: "when you meet the westward journey, you can improve your combat power by equipping cards. different cards increase your combat power differently; your combat power can be converted into daily revenue, daily revenue = combat power /100*0.2%; players can also increase your card combat power by inlaying gems on your cards",
+    v4: "use combat power explanation video",
+    t5: "trading hall",
+    p5: "the trading hall is divided into platform area, user area, sales record and purchase record",
+    v5: "using the trading hall explanation video",
+    t6: "mall",
+    p6: "blind box, props, skills",
+    v6: "using mall explanation video",
+    t7: "backpack",
+    p7: "backpacks are divided into cards, props, skills and weapons",
+    v7: "using backpack to explain video",
+    t8: "list",
+    p8: "the list is divided into gods list and ranking list",
+    v8: "using the list to explain video",
+    t9: "golden egg",
+    p9: "how to smash golden eggs? what's the use of smashing golden eggs?",
+    v9: "using golden egg smashing explanation video",
+    t10: "synthesis, mosaic",
+    p10: "card synthesis, gem synthesis, gem inlay",
+    v10: "use composite mosaic video",
+    t11: "official website",
+    p11: "insert official website link"
+  },
+
+
+  langSelect: {
+    set:"set up",
+    lang:"English",
+    pickerTitle: 'Language selection',
+    Voice: 'Sound effect settings',
+    network:"Network settings",
+    skin:"Browse mode",
+  },
+  common: {
+    Copy: 'Copy',
+    Bind: 'Bind',
+  },
+  home: {
+    SetNickName: 'Set My NickName',
+    CardSlot: 'Card Slot',
+    CardPower: ' Power',
+    MoneyLog: 'Money Log',
+    Pool: 'Pool',
+    RankSpan: 'Current Ranking',
+    Rank: 'Ranking',
+    User: 'User',
+    UsedPower: 'Used Power',
+    ChallengesNum: 'Number Of Challenges',
+    WeaponDurability: 'Weapon Durability',
+    GoldenBowl: 'Golden Bowl',
+    InviteCode: 'Invite Code',
+    BindInviteCode: 'BindIng Invite Code',
+    BindInviteCodeTs: 'Please enter the invitation code',
+    awardmky:"Prize pool reward"
+  },
+  Footer: {
+    Home: 'Home',
+    Market: 'Market',
+    Apotheosis: 'Apotheosis',
+    Trading: 'Trading Hall',
+    Package: 'Package',
+  }
+}
+
+export default message;

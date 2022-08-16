@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-import store from './store'
 import router from './router'
 
 // 引入vant
@@ -10,10 +9,27 @@ import 'vant/lib/index.css';
 Vue.use(Vant);
 
 //多语言
-import i18n from './lang/i18n';
+import VueI18n from 'vue-i18n'
+Vue.use(VueI18n)
+const i18n = new VueI18n({
+  locale: (function() {
+    if (localStorage.getItem('lang')) {
+      return localStorage.getItem('lang')
+    }
+    return 'zh'
+  }()),
+  messages: {
+    'en': require('./lang/en_US'), //英文语言包
+    'zh': require('./lang/zh_CN.js'), //中文繁体包
+  }
+})
 
 // 引入amfe-flexible
 import 'amfe-flexible/index'
+
+// 全局引入请求方法
+import request from './utils/request'
+Vue.prototype.$ = request
 
 Vue.config.productionTip = false
 
@@ -21,6 +37,5 @@ new Vue({
   el: '#app',
   router,
   i18n,
-  store,
   render: h => h(App),
 }).$mount('#app')
