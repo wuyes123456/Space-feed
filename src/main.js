@@ -28,8 +28,8 @@ const i18n = new VueI18n({
 import 'amfe-flexible/index'
 
 // 全局引入请求方法
-import request from './utils/request'
-Vue.prototype.$ = request
+import {request} from './utils/request'
+Vue.prototype.$axios=request
 
 Vue.config.productionTip = false
 

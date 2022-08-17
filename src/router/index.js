@@ -7,8 +7,15 @@ Vue.use(Router)
 export const constantRoutes = [
     {
         path: '/',
-        name: 'home',
-        component: () => import('@/views/home/index'),
+        redirect: '/index',
+        component: () => import('@/layout/tabBar'),
+        children: [
+            {
+                path: 'index',
+                name: 'index',
+                component: () => import('@/views/home/index'),
+            }
+        ]
     },
 ]
 

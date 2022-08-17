@@ -1,21 +1,22 @@
 <template>
+  <div class="home">
 
+  </div>
 </template>
 
 <script>
 export default {
-  name: "index",
+  name: "home",
   mounted() {
-    $.getRegion("/map/sss").then((r) => {
-      console.log(r);
-    });
-    $.getCulture().then((r) => {
-      t.msg = r.data.data;
-    });
+
   }
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.home{
+  height: 100vh; position: relative; z-index: 1;
+  background: url("../assets/hone-bg.jpg");
 
+}
 </style>
