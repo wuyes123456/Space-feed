@@ -9,10 +9,10 @@
     </div>
 
     <div class="tabBar">
-      <div class="li tab1"><span>主页</span> </div>
-      <div class="li tab2"><span>订单</span></div>
-      <div class="li tab3"><span>养殖仓</span></div>
-      <div class="li tab4"><span>我的</span></div>
+      <div class="li tab1" @click="navTo('index')" ><span>主页</span> </div>
+      <div class="li tab2" @click="navTo('order')"><span>订单</span></div>
+      <div class="li tab3" @click="navTo('studio')"><span>养殖仓</span></div>
+      <div class="li tab4" @click="navTo('my')"><span>我的</span></div>
     </div>
   </div>
 
@@ -20,7 +20,14 @@
 
 <script>
 export default {
-  name: "tabBar"
+  name: "tabBar",
+  methods:{
+    navTo(url){
+      this.$router.push({
+        name: url
+      })
+    }
+  }
 }
 </script>
 
@@ -33,8 +40,7 @@ export default {
 
   .top{
     position: absolute; z-index: 9;
-    top: 20px;
-    left: 0px;
+    top: 20px;left: 0px;
     width: 100%; color: #FFF;
     display: flex; justify-content: space-around;
     .btn{height:40px; line-height: 45px; width: 120px;  }
