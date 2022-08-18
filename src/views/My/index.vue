@@ -7,8 +7,8 @@
         <div class="title btn-bg">资产明细</div>
 
         <div class="flx">
-          <div class="btn btn-bg">充值</div>
-          <div class="btn btn-bg">领取</div>
+          <div class="btn btn-bg" @click="rechargeShow =true">充值</div>
+          <div class="btn btn-bg" @click="withdrawalShow = true">领取</div>
         </div>
       </div>
 
@@ -41,13 +41,28 @@
       </div>
 
     </div>
-  </div>
 
+    <exch-recharge v-if="rechargeShow" @close="rechargeShow = false"></exch-recharge>
+
+    <exch-withdrawal v-if="withdrawalShow" @close="withdrawalShow = false"></exch-withdrawal>
+
+  </div>
 </template>
 
 <script>
+import exchRecharge from "@/views/My/components/ExchRecharge";
+import exchWithdrawal from "@/views/My/components/ExchWithdrawal";
+
 export default {
-  name: "my"
+  name: "my",
+  components:{exchRecharge , exchWithdrawal},
+  data(){
+    return{
+      rechargeShow:false,
+      withdrawalShow:false
+    }
+  }
+
 }
 </script>
 

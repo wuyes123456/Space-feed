@@ -46,6 +46,7 @@ export default {
 .EXchShow{
   position: fixed; z-index: 98;
   top: 0px; left: 0px;
+  background: rgba(0,0,0,0.5);
   width: 100%; height: 100%;
   transform: scale(1);
   -webkit-animation: Show 0.6s linear 1; /* Chrome, Safari, Opera */

@@ -70,7 +70,6 @@ export default {
     position: absolute;  z-index: -1;
     right: 10%;top: 0%;
     width: 40%; height: 85%;
-    background: red;
     background-image: url("../../assets/men.jpg");
     background-size:100% 100%;
   }
@@ -80,8 +79,8 @@ export default {
     width: 20%;
     left: 12%; top: 10%;
 
-    -webkit-animation: rightGuang 5s linear infinite; /* Chrome, Safari, Opera */
-    animation: rightGuang 5s linear infinite;
+    -webkit-animation: rightGuang 7s linear infinite; /* Chrome, Safari, Opera */
+    animation: rightGuang 7s linear infinite;
   }
 }
 
@@ -93,13 +92,15 @@ export default {
 
 @keyframes rightGuang {
   0%{width: 20%;left: 12%; top: 10%;}
-  30%{width: 35%;left: 4%; top: 24%;}
+  20%{width: 35%;left: 4%; top: 24%;}
 
-  40%{width: 50%;left: -16%; top: 24%;}
-  60%{width: 50%;left: -16%; top: 34%;}
+  28%{width: 50%;left: -16%; top: 24%;}
+  43%{width: 50%;left: -16%; top: 34%;}
 
-  70%{width: 35%;left: 4%; top: 43%;}
-  100%{width: 10%;left: 18%; top: 75%;}
+  51%{width: 35%;left: 4%; top: 43%;}
+  80%{width: 10%;left: 18%; top: 75%;opacity: 1}
+  90%{width: 10%;left: 18%; top: 75%;opacity: 0}
+  100%{width: 10%;left: 18%; top: 75%;opacity: 0}
   
 }
 

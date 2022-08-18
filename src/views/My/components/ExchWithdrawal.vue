@@ -2,7 +2,7 @@
   <div class="EXchShow" :class="{'show' : show}"  @click="openClose()">
 
     <div class="Recharge window">
-      <div class="tit">输入充值金额</div>
+      <div class="tit">输入领取金额</div>
 
       <input type="number" class="rechNum" placeholder="请输入信息">
 
