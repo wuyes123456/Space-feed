@@ -43,4 +43,29 @@ export default {
   background-size: 100% 100%;
 }
 
+.EXchShow{
+  position: fixed; z-index: 98;
+  top: 0px; left: 0px;
+  width: 100%; height: 100%;
+  transform: scale(1);
+  -webkit-animation: Show 0.6s linear 1; /* Chrome, Safari, Opera */
+  animation: Show 0.6s linear 1;
+
+  opacity: 0; transform:scale(1.2);
+  transition: all 1S;
+}
+
+.EXchShow.show{
+  opacity: 1; transform:scale(1)
+}
+@keyframes Show{
+  0%{opacity: 0; transform:scale(1.2) }
+  100%{opacity: 1; transform: scale(1)}
+}
+.window{
+  position: fixed; z-index: 99;
+  top: 50%; left: 50%;
+  transform: translate(-50% , -50%);
+}
+
 </style>

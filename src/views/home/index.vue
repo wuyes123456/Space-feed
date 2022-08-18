@@ -62,7 +62,6 @@ export default {
     position: absolute;  z-index: -1;
     left: 10%;top: 0%;
     width: 40%; height: 85%;
-    background: red;
     background-image: url("../../assets/men.jpg");
     background-size:100% 100%;
     transform: rotateY(180deg)

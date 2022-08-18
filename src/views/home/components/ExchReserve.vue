@@ -1,7 +1,7 @@
 <template>
-  <div class="EXchShow" @click="openClose()">
+  <div class="EXchShow" :class="{'show' : show}"  @click="openClose()">
 
-    <div class="ExchReserve">
+    <div class="ExchReserve window">
       <div class="tit">输入预约金额</div>
       <div class="p">金额访问：1-100</div>
       <div class="tis">(预约金额为领养价值的10%)</div>
@@ -23,39 +23,30 @@
 <script>
 export default {
   name: "ExchReserve",
+  data(){
+    return{
+      show:true,
+    }
+  },
   methods:{
     openClose(){
-      this.$emit("close");
+      this.show = false;
+      setTimeout(()=>{
+        this.$emit("close");
+      },1000)
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-    .EXchShow{
-      position: fixed; z-index: 98;
-      top: 0px; left: 0px;
-      width: 100%; height: 100%;
-      transform: scale(1);
-      -webkit-animation: Show 0.5s linear 1; /* Chrome, Safari, Opera */
-      animation: Show 0.5s linear 1;
-    }
-    @keyframes Show{
-        0%{opacity: 0; transform:scale(1.2) }
-        100%{opacity: 1; transform: scale(1)}
-    }
-
     .ExchReserve{
-      position: fixed; z-index: 99;
-      top: 50%; left: 50%;
-      transform: translate(-50% , -50%);
       background-image: url("../../../assets/open_bg.png") ;
       background-size: 100% 100%;
       min-height:200px;
       width: 320px;
       color: #FFF; text-align: center;
       padding: 30px; box-sizing: border-box;
-
     }
 
     .tit{font-size: 18px; margin-bottom: 10px;}
