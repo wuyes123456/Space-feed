@@ -67,13 +67,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.my{
-  height: 100vh;
-  height: 100vh; position: relative;
-  background-image: url("../../assets/hone-bg.jpg");
-  background-size:100% 100%; overflow: hidden;
-  color: #FFF;
-}
+
 .main-scroll{
   width: 100%; box-sizing: border-box;
   height: 100%; padding-top: 50px;
@@ -91,7 +85,7 @@ export default {
   background: rgba(0,0,0,0.5);
   min-height: 50px;
   border-radius: 10px;
-  box-shadow: 0 0 10px 0px #EEEEEE;
+  box-shadow: 0 0 5px 0px rgba(255,255,255,0.6);
 }
 
 .serv{

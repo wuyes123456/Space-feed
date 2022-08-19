@@ -35,7 +35,16 @@ export default {
   #main_page{
     height: 100vh;
     width: 100%;
-    overflow-y: scroll;
+    overflow-y: scroll; position: relative;
+
+  }
+  .app-main{
+    background-image: url("../assets/hone-bg.jpg");
+    background-size:100% 100%; overflow: hidden;
+    height: 100vh;
+    width: 100%;
+
+    & > div{height: 100vh; position: relative; overflow-y: scroll}
   }
 
   .top{

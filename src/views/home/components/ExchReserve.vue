@@ -46,10 +46,10 @@ export default {
       min-height:200px;
       width: 320px;
       color: #FFF; text-align: center;
-      padding: 30px; box-sizing: border-box;
+      padding:40px 30px; box-sizing: border-box;
     }
 
-    .tit{font-size: 18px; margin-bottom: 10px;}
+    .tit{font-size: 18px; margin: 10px;}
     .p{font-size: 15px}
     .tis{font-size: 12px; color: #EEE; }
     .from{

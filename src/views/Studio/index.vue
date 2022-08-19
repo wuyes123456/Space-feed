@@ -33,12 +33,6 @@ export default {
 
 <style lang="scss" scoped>
 
-.studio{
-  height: 100vh;
-  height: 100vh; position: relative;
-  background-image: url("../../assets/Studio.jpg");
-  background-size:100% 100%; overflow: hidden;
-}
 .s-qiu{
   position: absolute;
   top: 37%; right: 3%;
@@ -135,10 +129,10 @@ export default {
   }
 
   .qiu{
-    position: absolute; z-index: -1;
+    position: absolute; z-index: 8;
     bottom: -100px; left: 10%;
     padding: 10px; border-radius: 50%;
-    background: url("../../assets/s_qi1.png") no-repeat;
+    background: url("../../assets/s_qi2.png") no-repeat;
     background-size: 100% 100%;
     opacity: 1;
 

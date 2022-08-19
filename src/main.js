@@ -31,6 +31,9 @@ import 'amfe-flexible/index'
 import {request} from './utils/request'
 Vue.prototype.$axios=request
 
+// import DApp from './DApp/index.js';
+// Vue.prototype.$DApp = DApp;
+
 Vue.config.productionTip = false
 
 new Vue({

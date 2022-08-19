@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div class="Men"  >
+    <div class="Men" :class="{'kai' : MenKai}">
       <div class="menKuang"></div>
       <div class="men-left">
         <img class="guang" src="../../assets/men-guang.png">
@@ -17,10 +17,21 @@
             公告....公告....公告....公告....公告....
         </div>
       </div>
+
       <div class="reserve btn-bg" @click="reserveShow=true">预约</div>
+      <div class="btnKai btn-bg" @click="MenOpen">kai</div>
+
+      <div class="center" :class="{'kai' : MenKai}">
+        <img class="kong" src="../../assets/h_center1.png" alt="">
+        <img  class="xinxuan" src="../../assets/h_center2.png" alt="">
+        <img class="result" src="../../assets/eggs.png">
+
+      </div>
+
+
     </div>
 
-
+    <audio ref="audio" src="https://heco.linkgame.club/upload/2022/08/18/6088_20220818172616A010.mp3" autoplay></audio>
     <exch-reserve v-if="reserveShow" @close="reserveShow = false"></exch-reserve>
   </div>
 </template>
@@ -32,21 +43,23 @@ export default {
   components:{exchReserve},
   data(){
     return{
-      reserveShow:false
+      reserveShow:false,
+      MenKai:false,
     }
   },
-  mounted() {
-
+  methods:{
+    MenOpen(){
+      this.MenKai = !this.MenKai
+      if(this.MenKai){
+        this.$refs.audio.play();
+        // this.$refs['audio'].play();
+      }
+    },
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.home{
-  height: 100vh; position: relative;
-  background-image: url("../../assets/hone-bg.jpg");
-  background-size:100% 100%;
-}
 
 .Men{
   position: absolute; z-index: 1;
@@ -64,7 +77,8 @@ export default {
     width: 40%; height: 85%;
     background-image: url("../../assets/men.jpg");
     background-size:100% 100%;
-    transform: rotateY(180deg)
+    transform: rotateY(180deg);
+    transition: all 1S;
   }
   .men-right{
     position: absolute;  z-index: -1;
@@ -72,6 +86,7 @@ export default {
     width: 40%; height: 85%;
     background-image: url("../../assets/men.jpg");
     background-size:100% 100%;
+    transition: all 1S;
   }
 
   .guang{
@@ -84,10 +99,21 @@ export default {
   }
 }
 
+.Men.kai{
+  .men-left{left: -20%}
+  .men-right{right: -20%}
+}
+.btnKai{
+  height: 50px; line-height: 55px;
+  width: 150px;
+  position: absolute;
+  bottom: 20%; left:00%; margin-left: -75px;
+  color: #FFF; font-size: 18px; font-weight: bold;
+}
+
 .main{
   position:relative; z-index: 2;
   width: 100%; height: 100%;
-
 }
 
 @keyframes rightGuang {
@@ -107,7 +133,7 @@ export default {
 .reserve{
   height: 50px; line-height: 55px;
   width: 150px;
-  position: absolute;
+  position: absolute; z-index: 20;
   bottom: 20%; left:50%; margin-left: -75px;
   color: #FFF; font-size: 18px; font-weight: bold;
 }
@@ -126,5 +152,80 @@ export default {
   }
   .info{flex: 1; text-align: left; font-size: 12px }
 }
+
+.center{
+  position: absolute; z-index: -1; opacity: 0;
+  top: 10%; left: 0%;
+  height: 400px; width: 100%;
+  transform:scale(0.1);
+  background-image: url("../../assets/h_center1.png");
+  background-size: 400px 400px;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  transition-delay: 1S;
+  -webkit-transition-delay: 1S;
+  transition: all 3S;
+  -webkit-transition: all 3S;
+
+  .kong{
+    position: absolute; z-index: 1;
+    top: 0px; left: 50%; margin-left: -200px;
+    width: 400px; height: 400px;
+    transform: rotate(90deg);
+    animation: xuan1 30S linear infinite;
+    -webkit-animation: xuan1 30S linear infinite;
+    //opacity: 0;
+  }
+
+  .xinxuan{
+    position: absolute; z-index: -1;
+    top: 50%; left: 50%;
+    transform: translate(-50% , -50%);
+    width: 400px; height: 400px;
+    animation: xinxuan 10S linear infinite;
+    -webkit-animation: xinxuan 10S linear infinite;
+
+    transition: all 2S;
+    -webkit-transition: all 2S;
+    transition-delay: 5S;
+    -webkit-transition-delay: 5S;
+
+    opacity: 0;
+  }
+  .result{
+    position: absolute; z-index: 3;
+    top: 50%; left: 50%;
+    transform: translate(-50% , -50%);
+    width: 0px; height: 150px;
+    object-fit: contain;
+
+
+    transition: all 3S;
+    -webkit-transition: all 3S;
+    transition-delay: 2S;
+    -webkit-transition-delay: 2S;
+  }
+
+
+}
+.center.kai{
+  transform:  scale(1);
+  opacity: 1;
+  .result{ width: 150px; }
+  .xinxuan{width: 400px; opacity: 1 }
+}
+
+
+
+@keyframes xinxuan {
+  0%{transform:translate(-50% , -50%) rotate(0deg)}
+  100%{transform:translate(-50% , -50%) rotate(360deg)}
+}
+@keyframes xuan1 {
+  0%{transform: rotate(0deg)}
+  100%{transform: rotate(-360deg)}
+}
+
 
 </style>
