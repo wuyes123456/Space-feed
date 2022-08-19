@@ -31,11 +31,11 @@
         <div class="fle">
           <div class="li"> <span>0</span> 一代 </div>
           <div class="li"> <span>0</span> 二代 </div>
-          <div class="li"> <span>0</span> 三代 </div>
+          <div class="li"> <span>0</span> 团队人数 </div>
         </div>
         <div class="bottom">
-          <div class="btn btn-bg">详细</div>
-          <div class="btn btn-bg">团队详细</div>
+          <div class="btn btn-bg" @click="navTo('team')">详细</div>
+          <div class="btn btn-bg" @click="navTo('team')">团队详细</div>
         </div>
 
       </div>
@@ -61,6 +61,13 @@ export default {
       rechargeShow:false,
       withdrawalShow:false
     }
+  },
+  methods:{
+    navTo(url){
+      this.$router.push({
+        name: url
+      })
+    }
   }
 
 }
@@ -73,6 +80,7 @@ export default {
   height: 100%; padding-top: 50px;
   padding-bottom: 100px; box-sizing: border-box;
   overflow-y: scroll;
+  color: #FFF;
 }
 
 .top{

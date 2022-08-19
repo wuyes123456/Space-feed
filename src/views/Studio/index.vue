@@ -26,12 +26,27 @@
 </template>
 
 <script>
+import {login} from "@/api";
+
 export default {
-  name: "studio"
+  name: "studio",
+  mounted() {
+    login().then(res => {
+
+    }).catch( error =>{
+
+    })
+  }
 }
 </script>
 
 <style lang="scss" scoped>
+.studio{
+  height: 100vh;
+  height: 100vh; position: relative;
+  background-image: url("../../assets/Studio.jpg");
+  background-size:100% 100%; overflow: hidden;
+}
 
 .s-qiu{
   position: absolute;

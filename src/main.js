@@ -27,10 +27,6 @@ const i18n = new VueI18n({
 // 引入amfe-flexible
 import 'amfe-flexible/index'
 
-// 全局引入请求方法
-import {request} from './utils/request'
-Vue.prototype.$axios=request
-
 // import DApp from './DApp/index.js';
 // Vue.prototype.$DApp = DApp;
 

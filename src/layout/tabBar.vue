@@ -5,6 +5,10 @@
       <div class="btn btn-bg">EN</div>
     </div>
     <div class="app-main">
+      <div class="dong">
+<!--        <img class="d1" src="../assets/h-d1.png">-->
+        <img v-for="h2 in 10" :key="h2" class="d2" src="../assets/hd2.png">
+      </div>
       <router-view />
     </div>
 
@@ -39,12 +43,55 @@ export default {
 
   }
   .app-main{
-    background-image: url("../assets/hone-bg.jpg");
+    //background-image: url("../assets/hone-bg.jpg");
+    background-image: url("../assets/Home.jpg");
     background-size:100% 100%; overflow: hidden;
     height: 100vh;
     width: 100%;
 
-    & > div{height: 100vh; position: relative; overflow-y: scroll}
+    .dong{
+      position: absolute;
+      width: 100%;height: 100%;
+      overflow:hidden;
+
+      .d1{width: 100%; height: 100%; opacity: 0.3;
+          animation: Dshan 3000ms infinite;
+      }
+      @keyframes Dshan {
+        0%{transform: scale(1)}
+        50%{transform: scale(2)}
+        100%{transform: scale(1)}
+      }
+      .d2{
+        position: absolute;
+        top: 40%; left: 50%;
+        transform: translate(-50%, -50%);
+        width: 10%;
+        animation: Dh2 10000ms infinite;
+      }
+      .d2:nth-child(1){ animation-delay: 1S;}
+      .d2:nth-child(2){ animation-delay: 2S;}
+      .d2:nth-child(3){ animation-delay: 3S;}
+      .d2:nth-child(4){ animation-delay: 4S;}
+      .d2:nth-child(5){ animation-delay: 5S;}
+      .d2:nth-child(6){ animation-delay: 6S;}
+      .d2:nth-child(7){ animation-delay: 7S;}
+      .d2:nth-child(8){ animation-delay: 8S;}
+      .d2:nth-child(9){ animation-delay: 9S;}
+      .d2:nth-child(10){ animation-delay: 10S;}
+
+      @keyframes Dh2 {
+        0%{width: 10%; opacity: 1}
+        100%{width: 300%; opacity: 0}
+
+      }
+
+
+
+    }
+
+
+    & > div{height: 100vh; position: relative; z-index: 2; overflow-y: scroll}
   }
 
   .top{
