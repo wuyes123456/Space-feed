@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-
+import store from './store'
 import router from './router'
 
 // 引入vant
@@ -27,8 +27,8 @@ const i18n = new VueI18n({
 // 引入amfe-flexible
 import 'amfe-flexible/index'
 
-// import DApp from './DApp/index.js';
-// Vue.prototype.$DApp = DApp;
+import DApp from './Dapp/index';
+Vue.prototype.$DApp = DApp;
 
 Vue.config.productionTip = false
 
@@ -36,5 +36,6 @@ new Vue({
   el: '#app',
   router,
   i18n,
+  store,
   render: h => h(App),
 }).$mount('#app')

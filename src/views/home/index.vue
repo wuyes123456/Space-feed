@@ -14,7 +14,7 @@
       <div class="gonggang">
         <van-icon name="bell" />
         <div class="info">
-            公告....公告....公告....公告....公告....
+            {{token}}公告....公告....公告....公告....公告....
         </div>
       </div>
 
@@ -38,6 +38,7 @@
 
 <script>
 import exchReserve from "@/views/home/components/ExchReserve";
+import {mapState} from "vuex";
 export default {
   name: "home",
   components:{exchReserve},
@@ -47,12 +48,22 @@ export default {
       MenKai:false,
     }
   },
+  computed:{
+    ...mapState({
+      token: state => state.user.token,
+    })
+  },
+  watch:{
+    token(e){
+      console.log(e)
+    }
+  },
   methods:{
     MenOpen(){
+      this.$store.commit("user/SET_TOKEN", "AAAAAA");
       this.MenKai = !this.MenKai
       if(this.MenKai){
         this.$refs.audio.play();
-        // this.$refs['audio'].play();
       }
     },
   }

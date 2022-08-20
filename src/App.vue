@@ -13,6 +13,10 @@ export default {
   name: 'app',
   components: {
     HelloWorld
+  },
+  mounted() {
+    this.$DApp.login();
+
   }
 }
 </script>

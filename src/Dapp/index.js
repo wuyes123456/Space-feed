@@ -1,19 +1,33 @@
-import MkyCoin from './api/MkyCoin'
-import ScpCoin from './api/ScpCoin'
-import HbkCoin from './api/HbkCoin'
-import HbkyCoin from './api/HbkyCoin'
-import MkyCardCoin from './api/MkyCardCoin'
-import MkyPropsCoin from './api/MkyPropsCoin'
-import MarketCon from './api/MarketCon'
-import TradingHallCon from './api/TradingHallCon'
+import store from "@/store";
+
+async function login(){
+    if (typeof window.ethereum !== 'undefined') {
+        let addr=await ethereum.request({ method: 'eth_requestAccounts' });//授权连接钱包
+
+        console.log('用户钱包地址:',addr[0]);
+    }else{
+        console.log('未安装钱包插件！');
+    }
+}
+
+async function onAccountChanged(){
+    return "231321"
+    // console.log("链切换")
+    // //监听链网络改变
+    // ethereum.on("chainChanged",()=>{
+    //     console.log('链切换')
+    //     // window.location.reload();
+    // });
+}
+
+// ethereum.on("accountsChanged", function(accounts) {
+//     console.log('钱包切换')
+//     window.location.reload();
+// });
+
+
 
 export default {
-    MkyCoin,
-    ScpCoin,
-    HbkCoin,
-    HbkyCoin,
-    MkyCardCoin,
-    MkyPropsCoin,
-    MarketCon,
-    TradingHallCon
+    login,
+    onAccountChanged
 }
