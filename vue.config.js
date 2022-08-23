@@ -16,14 +16,7 @@ module.exports = {
 			// 		['^' + process.env.VUE_APP_BASE_API]: ''
 			// 	}
 			// },
-			'/max': {
-				target: 'https://www.max68888.com/max/',  //这里后台的地址模拟的;应该填写你们真实的后台接口
-				ws: true,
-				changOrigin: true,  //允许跨域
-				pathRewrite: {
-					'^/api': ''  //请求的时候使用这个api就可以
-				}
-			},
+
 			'/upload': {
 				target: `http://47.52.207.130:9000`,
 				changeOrigin: true,

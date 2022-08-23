@@ -7,6 +7,9 @@ const mutations = {
     SET_TOKEN: (state, token) => {
         state.token = token
     },
+    SET_ADDRESS: (state, address) => {
+        state.address = address
+    },
 }
 const actions ={
 

@@ -8,6 +8,7 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import {ethers} from "ethers";
 
 export default {
   name: 'app',
@@ -15,7 +16,11 @@ export default {
     HelloWorld
   },
   mounted() {
-    this.$DApp.login();
+    this.$DApp.init();
+
+    this.$DApp.onAccountChanged( (networkId) =>{
+      console.log('id',networkId)
+    })
 
   }
 }

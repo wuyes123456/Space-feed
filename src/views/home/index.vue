@@ -14,7 +14,7 @@
       <div class="gonggang">
         <van-icon name="bell" />
         <div class="info">
-            {{token}}公告....公告....公告....公告....公告....
+            {{address}}公告....公告....公告....公告....公告....
         </div>
       </div>
 
@@ -51,16 +51,20 @@ export default {
   computed:{
     ...mapState({
       token: state => state.user.token,
+      address: state => state.user.address
     })
   },
   watch:{
     token(e){
       console.log(e)
+    },
+    address(e){
+      console.log(e)
     }
   },
   methods:{
     MenOpen(){
-      this.$store.commit("user/SET_TOKEN", "AAAAAA");
+      this.$DApp.onAccountChanged();
       this.MenKai = !this.MenKai
       if(this.MenKai){
         this.$refs.audio.play();
