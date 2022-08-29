@@ -39,6 +39,8 @@
 <script>
 import exchReserve from "@/views/home/components/ExchReserve";
 import {mapState} from "vuex";
+import web3 from "web3"
+
 export default {
   name: "home",
   components:{exchReserve},
@@ -59,17 +61,19 @@ export default {
       console.log(e)
     },
     address(e){
-      console.log(e)
+      // console.log(e)
     }
   },
   methods:{
     MenOpen(){
       this.$DApp.onAccountChanged();
+      this.$DApp.getBalance()
       this.MenKai = !this.MenKai
       if(this.MenKai){
         this.$refs.audio.play();
       }
     },
+
   }
 }
 </script>
