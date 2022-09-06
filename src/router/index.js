@@ -1,14 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
 Vue.use(Router)
-
 // 公共路由
 export const constantRoutes = [
     {
         path: '/',
         redirect: '/index',
-        component: () => import('@/layout/tabBar'),
+        component: () => import('../layout/tabBar'),
         children: [
             {
                 path: 'index',

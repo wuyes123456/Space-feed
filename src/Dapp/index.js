@@ -1,5 +1,6 @@
 import store from "@/store";
 import Web3 from "web3";
+import {Toast } from "vant"
 // let web3 = new Web3(provider);
 // window.web3 = web3;//挂载在window上，方便直接获取
 
@@ -23,7 +24,7 @@ async function init() {
     //判断用户是否安装MetaMask钱包插件
     if (typeof window.ethereum === "undefined") {
         //没安装MetaMask钱包进行弹框提示
-        Message.warning("请安装MetaMask")
+        Toast.fail("请安装MetaMask")
     } else {
         //如果用户安装了MetaMask，你可以要求他们授权应用登录并获取其账号
         ethereum.enable().catch(function(reason) {
@@ -80,35 +81,42 @@ async function onAccountChanged(networkId){
     });
 }
 
-ethereum.on("chainChanged",(id)=>{
-    // console.log('链切换',id)
-    console.log(web3.fromWei(eth.getBalance(eth.coinbase)))
-
-});
-
-
-
-
-// 当用户选中账号变化时触发
-ethereum.on("accountsChanged", function(addr) {
-    console.log('钱包切换',addr[0])
-
-    store.commit("user/SET_ADDRESS", addr[0]);
-    // window.location.reload();
-
-});
+// ethereum.on("chainChanged",(id)=>{
+//     // console.log('链切换',id)
+//     console.log(web3.fromWei(eth.getBalance(eth.coinbase)))
+//
+// });
+//
+//
+//
+//
+// // 当用户选中账号变化时触发
+// ethereum.on("accountsChanged", function(addr) {
+//     console.log('钱包切换',addr[0])
+//
+//     store.commit("user/SET_ADDRESS", addr[0]);
+//     // window.location.reload();
+//
+// });
 
 async function getBalance(){
-    let addr= ethereum.selectedAddress
-    // const Balance = await ethereum.request({
-    //     method: 'eth_getBalance' ,
-    //     params: [{
-    //         to:addr,
-    //
-    //     }]
-    // });
-    const accounts = await ethereum.request({ method: 'eth_balance' });
-    console.log(accounts)
+    let addr= ethereum.selectedAddress;
+    ethereum.request({
+        method: 'eth_getBalance',
+        params: [
+            addr,
+            'latest'
+        ]
+    })
+    .then((result) => {
+        console.log("获取余额success--->" + result)
+        let formartEther = ethers.utils.formatEther(result);
+        console.log(formartEther)
+    })
+    .catch((error) => {
+        console.log("获取余额error--->" + error.code)
+    });
+
 }
 
 

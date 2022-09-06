@@ -1,29 +1,24 @@
-const autoprefixer = require('autoprefixer')  // 这个依赖不用安装
+// const autoprefixer = require('autoprefixer')  // 这个依赖不用安装
 const pxtorem = require('postcss-pxtorem')
 const BASE_URL = process.env.NODE_ENV === 'production' ? './' : '/';
 
 module.exports = {
 	devServer: {
+		host: 'localhost',
 		open: true,
-		host: '0.0.0.0',
 		port: 8080,
+		https: false,
 		//以上的ip和端口是我们本机的;下面为需要跨域的
 		proxy: {  //配置跨域
-			// [process.env.VUE_APP_BASE_API]: {
-			// 	target: `https://www.max68888.com`,
-			// 	changeOrigin: true,
-			// 	pathRewrite: {
-			// 		['^' + process.env.VUE_APP_BASE_API]: ''
-			// 	}
-			// },
-
-			'/upload': {
-				target: `http://47.52.207.130:9000`,
-				changeOrigin: true,
+			'/api': {
+				target: 'http://localhost:8083/api/',  //这里后台的地址模拟的;应该填写你们真实的后台接口
+				ws: true,
+				changOrigin: true,  //允许跨域
 				pathRewrite: {
-					'^/upload': '/upload'
+					'^/api': ''  //请求的时候使用这个api就可以
 				}
-			}
+			},
+
 		}
 	},
 	// Eslint检测
@@ -34,7 +29,7 @@ module.exports = {
 		loaderOptions: {
 			postcss: {
 				plugins: [
-					autoprefixer(),
+					// autoprefixer(),
 					pxtorem({
 						rootValue: 37.5, // 根字体大小，如果设计图是750的话 记得除2
 						unitPrecision: 5,
