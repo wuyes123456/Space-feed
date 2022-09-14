@@ -31,7 +31,7 @@
 
     </div>
 
-    <audio ref="audio" src="https://heco.linkgame.club/upload/2022/08/18/6088_20220818172616A010.mp3" autoplay></audio>
+    <audio ref="audio" src="https://heco.linkgame.club/upload/2022/08/18/6088_20220818172616A010.mp3"></audio>
     <exch-reserve v-if="reserveShow" @close="reserveShow = false"></exch-reserve>
   </div>
 </template>

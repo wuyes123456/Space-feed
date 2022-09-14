@@ -31,11 +31,8 @@ import {login} from "@/api";
 export default {
   name: "studio",
   mounted() {
-    login().then(res => {
+    console.log('res')
 
-    }).catch( error =>{
-
-    })
   }
 }
 </script>

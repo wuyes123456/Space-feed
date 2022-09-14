@@ -1,12 +1,18 @@
 import Vue from 'vue'
 import App from './App.vue'
+
 import store from './store'
 import router from './router'
 
 // 引入vant
-import Vant, {Toast} from 'vant';
+import Vant from 'vant';
 import 'vant/lib/index.css';
 Vue.use(Vant);
+
+// 引入amfe-flexible
+import 'amfe-flexible/index'
+import VueClipBoard from 'vue-clipboard2'
+Vue.use(VueClipBoard)
 
 //多语言
 import VueI18n from 'vue-i18n'
@@ -24,18 +30,14 @@ const i18n = new VueI18n({
   }
 })
 
-// 引入amfe-flexible
-import 'amfe-flexible/index'
-
 import DApp from './Dapp/index';
 Vue.prototype.$DApp = DApp;
 
 Vue.config.productionTip = false
 
 new Vue({
-  el: '#app',
   router,
-  i18n,
   store,
+  i18n,
   render: h => h(App),
 }).$mount('#app')

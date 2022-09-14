@@ -1,27 +1,18 @@
 <template>
   <div id="app">
-    <div class="view-page" >
-      <router-view />
-    </div>
+    <router-view />
+<!--    <img alt="Vue logo" src="./assets/logo.png">-->
+<!--    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-import {ethers} from "ethers";
 
 export default {
   name: 'app',
   components: {
     HelloWorld
-  },
-  mounted() {
-    this.$DApp.init();
-
-    this.$DApp.onAccountChanged( (networkId) =>{
-      console.log('id',networkId)
-    })
-
   }
 }
 </script>
@@ -32,9 +23,9 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  font-size: 15px;
+  color: #2c3e50; font-size: 15px;
 }
+
 
 .btn-bg{
   background-image: url("./assets/btn-bg.png");
@@ -51,7 +42,6 @@ export default {
   display: inline-block;
   background-size: 100% 100%;
 }
-
 .EXchShow{
   position: fixed; z-index: 98;
   top: 0px; left: 0px;
@@ -77,5 +67,6 @@ export default {
   top: 50%; left: 50%;
   transform: translate(-50% , -50%);
 }
+
 
 </style>

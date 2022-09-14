@@ -1,11 +1,11 @@
-// const autoprefixer = require('autoprefixer')  // 这个依赖不用安装
+const autoprefixer = require('autoprefixer')  // 这个依赖不用安装
 const pxtorem = require('postcss-pxtorem')
 const BASE_URL = process.env.NODE_ENV === 'production' ? './' : '/';
 
 module.exports = {
 	devServer: {
-		host: 'localhost',
 		open: true,
+		host: '0.0.0.0',
 		port: 8080,
 		https: false,
 		//以上的ip和端口是我们本机的;下面为需要跨域的
@@ -18,7 +18,13 @@ module.exports = {
 					'^/api': ''  //请求的时候使用这个api就可以
 				}
 			},
-
+			'/upload': {
+				target: `http://47.52.207.130:9000`,
+				changeOrigin: true,
+				pathRewrite: {
+					'^/upload': '/upload'
+				}
+			}
 		}
 	},
 	// Eslint检测
@@ -29,7 +35,7 @@ module.exports = {
 		loaderOptions: {
 			postcss: {
 				plugins: [
-					// autoprefixer(),
+					autoprefixer(),
 					pxtorem({
 						rootValue: 37.5, // 根字体大小，如果设计图是750的话 记得除2
 						unitPrecision: 5,
